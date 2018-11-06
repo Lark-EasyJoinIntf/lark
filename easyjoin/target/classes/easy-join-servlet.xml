@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xmlns:cache="http://www.springframework.org/schema/cache"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
+                        http://www.springframework.org/schema/context    
+                        http://www.springframework.org/schema/context/spring-context-3.1.xsd    
+                        http://www.springframework.org/schema/mvc    
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                        http://www.springframework.org/schema/aop  
+        				http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+        				http://www.springframework.org/schema/cache  
+        				http://www.springframework.org/schema/cache/spring-cache-3.2.xsd 
+        				http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.1.xsd "> 
+     
+    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->  
+    <context:component-scan base-package="com.easyjoin.controller">
+        <!-- 制定扫包规则 ,只扫描使用@Controller注解的JAVA类 -->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>        
+    </context:component-scan> 
+    
+	<mvc:annotation-driven>
+	    <!-- 处理responseBody 里面日期类型 -->  
+        <mvc:message-converters register-defaults="true">
+            <!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+		    	<constructor-arg value="UTF-8" />
+			</bean>
+			<bean class="org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter">
+			    <property name="supportedMediaTypes">
+			   		<list>
+                	    <value>application/json;charset=UTF-8</value>
+                	    <value>text/html;charset=UTF-8</value>  
+                	</list>
+			    </property>
+			</bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">  
+                <property name="objectMapper">  
+                    <bean class="com.easyjoin.util.mapper.JsonMapper">
+                    	<property name="dateFormat">  
+                            <bean class="java.text.SimpleDateFormat">  
+                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />  
+                            </bean>  
+                        </property> 
+                    </bean>  
+                </property> 
+                <property name="supportedMediaTypes">
+                	<list>
+                	    <value>application/json;charset=UTF-8</value>
+                	    <value>text/html;charset=UTF-8</value>  
+                	</list>
+                </property>
+                <property name="prettyPrint" value="false"/>
+            </bean>  
+        </mvc:message-converters>
+	</mvc:annotation-driven>
+   
+	<!-- 定义跳转的文件的前后缀 ，视图模式配置-->  
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+        <!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->  
+        <property name="prefix" value="/" />  
+        <property name="suffix" value=".jsp" />  
+    </bean> 
+    
+     <!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
+	<mvc:default-servlet-handler />
+	
+	<!-- 静态资源映射 -->
+    <mvc:resources mapping="/static/**" location="/static/" cache-period="31536000"/>
+    
+    
+</beans> 
