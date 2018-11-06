@@ -15,7 +15,7 @@
 
 3、当你接入同一个业务，却要面对多套外部接口，且返回五花八门？
 
-4、当你的入参格式是JSON，当对方的入参格式缺失XML或其他，是不是感觉天都要塌下来了？
+4、当你的入参格式是JSON，但对方的入参格式确实XML或其他，是不是感觉天都要塌下来了？
 
 5、当外部接口参数改变时，是否觉得变更麻烦？
 
@@ -33,6 +33,7 @@ IntfUtil.sendPost(JSONObject reqParams, String provider, String intfCode)
 reqParams：请求参数
 provider： 接口提供者编码
 intfCode： 接口编码或接口路径
+
 · 界面化操作
 
 1.项目集成
@@ -98,6 +99,7 @@ intfCode： 接口编码或接口路径
 · 团队风采
 
       听风者：10年以上IT工作从业经验(待完善)
+      
       UZ：4年以上IT工作从业经验(待完善)
 
 
