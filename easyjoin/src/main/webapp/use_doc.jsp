@@ -24,21 +24,41 @@ request.setAttribute("ctx", ctx);
 </style>
 </head>
 <body style="margin:0;">
-	<h1 style="line-height:60px;">
-		<img alt="" src="${ctx }/static/images/logo.png" style="float:left;">Easy Join
-		<SPAN STYLE="FONT-SIZE:16PX; COLOR: #009fff;">为您解决接口对接的烦恼</<SPAN>
-	</h1>
-	<br/>
+<h1 style="line-height:60px;">
+	<img alt="" src="${ctx }/static/images/logo.png" style="float:left;">Easy Join
+	<SPAN STYLE="FONT-SIZE:16PX; COLOR: #009fff;">为您解决接口对接的烦恼</<SPAN>
+</h1>
+<br/>
+<div style="background:#ccc;">
 	<h2>项目简介</h2>
 	<div>
 		<p>
-			该项目源于工作中遇到的实际问题。解放了接口对接的烦恼，为同一业务接入多渠道接口提供统一输入、标准输出的接入解决方案，让您更专注于业务及本地逻辑！
+			1、面对几十上百的参数的接口时，你是否感到眼花缭乱、发愁、头疼？
+		</p>
+		<p>
+			2、在公司现有成熟的业务上突然需要接入外部的数据接口，是否感觉参数、返回等的转换繁琐且费事？
+		</p>
+		<p>
+			3、当你接入同一个业务，却要面对多套外部接口，且返回五花八门？
+		</p>
+		<p>
+			4、当你的入参格式是JSON，但对方的入参格式确实XML或其他，是不是感觉天都要塌下来了？
+		</p>
+		<p>
+			5、当外部接口参数改变时，是否觉得变更麻烦？
+		</p>
+
+		<p>
+			本项目就是为了一站式解决这些问题应势而生，为你解决这些烦恼。项目源于工作中遇到的实际问题，解放了接口对接的烦恼，为同一业务接入多渠道接口等场景提供统一输入、标准输出的接入解决方案，让您更专注于业务及本地逻辑！
 		</p>
 		<p>
 			场景1：普通的单渠道接入
 		</p>
 		<p>
 			场景2：同一业务接入多渠道接口（不同渠道提供的接口不同，业务相同）
+		</p>
+		<p>
+			场景3：。。。
 		</p>
 	</div>
 	<h2>主调接口</h2>
@@ -111,7 +131,7 @@ request.setAttribute("ctx", ctx);
 			<p class="ptext"></p>
 		</div>
 	</div> -->
-	
-	<jsp:include page="myinfo.jsp"></jsp:include>
+</div>
+<jsp:include page="myinfo.jsp"></jsp:include>
 </body>
 </html>
