@@ -7,7 +7,7 @@
 				<table align="center">
 					<tr><td>团队风采</td></tr>
 					<tr><td>1、听风者：10年以上IT工作从业经验</td></tr>
-					<tr><td>3、有志：4年以上IT工作从业经验</td></tr>
+					<tr><td>2、DaxstUz：4年以上IT工作从业经验</td></tr>
 				</table>
 			</td>
 			<td>捐助，谢谢您的支持</td>
