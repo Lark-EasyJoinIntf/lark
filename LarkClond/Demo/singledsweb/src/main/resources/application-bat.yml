@@ -1,0 +1,66 @@
+##公共配置与profiles选择无关
+##公共配置与profiles选择无关 mapperLocations指的路径是src/main/resources
+#mybatis:
+#  typeAliasesPackage: com.xdd.entity
+#  mapperLocations: classpath:mapper/*.xml
+
+logging:
+  ##日志存储地址
+  file: "logs/single-datasource-demo.log"
+  #level:
+   # root: debug
+info:
+  name : "集成Mybatis"
+
+server:
+  port: 8080
+  ##项目上下文，如果不设定，默认是 /
+  servlet:
+    context-path: /web
+
+spring:
+  ##默认使用配置
+  profiles:
+    active: dev
+
+  ##集成mybatic增加数据库配置
+  ##mysql-8.xx的驱动类为com.mysql.cj.jdbc.Driver，com.mysql.jdbc.Driver被弃用了；serverTimezone=GMT%2B8设置东八区解决乱码问题
+  datasource:
+    url: jdbc:mysql://localhost:3308/spring_boot_test_b?autoReconnect=true&initialTimeout=3&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  ##动态模版配置
+  thymeleaf:
+    content-type:
+      servlet: text/html
+    encoding: UTF-8
+    cache: false
+    mode: HTML
+    ##以下解決Error resolving template异常
+    prefix: classpath:/templates/
+
+  ##session存储类型
+  session:
+    store-type: redis
+    ##设置session超时时间
+    timeout: 2000
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
+mybatis:
+  mapper-locations: classpath:mapper/*/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.lark.*.model  # 注意：对应实体类的路径
+
+##pagehelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    returnPageInfo: check
+

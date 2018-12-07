@@ -1,0 +1,23 @@
+logging:
+  ##日志存储地址
+  file: "logs/single-datasource-demo.log"
+  #level:
+   # root: debug
+
+server:
+  port: 8080
+
+spring:
+  ##集成mybatic增加数据库配置
+  ##mysql-8.xx的驱动类为com.mysql.cj.jdbc.Driver，com.mysql.jdbc.Driver被弃用了；serverTimezone=GMT%2B8设置东八区解决乱码问题
+  datasource:
+    url: jdbc:mysql://localhost:3308/spring_boot_test_b?autoReconnect=true&initialTimeout=3&useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+

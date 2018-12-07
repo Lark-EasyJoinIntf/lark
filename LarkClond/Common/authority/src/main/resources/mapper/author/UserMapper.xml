@@ -1,0 +1,50 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lark.authority.dao.UserDao" >
+    <sql id="BASE_TABLE">
+        sys_user
+    </sql>
+
+    <sql id="BASE_COLUMN">
+        id, username, password, sex
+    </sql>
+
+    <insert id="insert" parameterType="com.lark.authority.model.SysUser">
+        INSERT INTO
+        <include refid="BASE_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            username, password
+            <if test="sex != null">
+                , sex
+            </if>
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{username, jdbcType=VARCHAR},#{password, jdbcType=VARCHAR}
+            <if test="sex != null">
+                , #{sex, jdbcType=VARCHAR}
+            </if>
+        </trim>
+    </insert>
+
+    <select id="selectUsers" resultType="com.lark.authority.model.SysUser">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+    </select>
+
+    <select id="getUser" parameterType="java.lang.Long" resultType="com.lark.authority.model.SysUser">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        WHERE id = #{id}
+    </select>
+
+    <select id="getUserByName" parameterType="java.lang.String" resultType="com.lark.authority.model.SysUser">
+        SELECT u.*, r.NAME roleName
+          FROM sys_user u
+        LEFT JOIN sys_role_user sru ON u.id = sru.sys_user_id
+        LEFT JOIN sys_role r ON sru.sys_role_id = r.id
+        WHERE u.username = #{username}
+    </select>
+</mapper>
