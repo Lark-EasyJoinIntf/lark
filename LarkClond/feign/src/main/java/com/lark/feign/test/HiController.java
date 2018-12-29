@@ -19,15 +19,15 @@ public class HiController {
     }
 
     @PostMapping(value = "/sethi")
-    public Result<UserInfo> setHi(@RequestBody BaseEntity<UserInfo> user) {
-        return schedualServiceHi.setHiFromClientOne( user.getData() );
+    public Result<UserInfo> setHi(@RequestBody BaseParamEntity<UserInfo> user) {
+        return schedualServiceHi.setHiFromClientOne( user.getParam() );
     }
 
     @PostMapping(value = "/getUserForPage")
-    public Result<Page<UserInfo>> getUserForPage(@RequestBody BaseEntity<Page> page) {
+    public Result<Page<UserInfo>> getUserForPage(@RequestBody BaseParamEntity<Page> page) {
         Result<Page<UserInfo>> result = new Result(Status.EXC.setMessage("未提供分页参数"));
-        if(page.getData()!=null){
-            result = schedualServiceHi.getForPage(page.getData());
+        if(page.getParam()!=null){
+            result = schedualServiceHi.getForPage(page.getParam());
         }
         System.out.println("S2 status="+result.getStatus());
         return result;

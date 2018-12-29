@@ -27,7 +27,7 @@ public class Eurekaclient2Application {
 	@Value("${server.port}")
 	String port;
 
-	@RequestMapping("/hi")
+	@GetMapping("/hi")
 	public Result<String> home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
 		return new Result(Status.SUCCESS, "hi " + name + " ,i am from port:" + port);
 	}

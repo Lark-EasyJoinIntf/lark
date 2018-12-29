@@ -4,10 +4,7 @@ import com.entity.entities.Page;
 import com.entity.entities.Result;
 import com.entity.entities.UserInfo;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * feign作为服务消费者，定义一个feign接口，通过@ FeignClient（“服务名”），来指定调用哪个服务。
@@ -16,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient(value = "service-hi",fallback = SchedualServiceHiHystric.class)
 public interface SchedualServiceHi {
-    @RequestMapping(value = "/hi",method = RequestMethod.GET)
+    @GetMapping(value = "/hi")
     Result<String> sayHiFromClientOne(@RequestParam(value = "name") String name);
 
-    @RequestMapping(value = "/sethi",method = RequestMethod.POST)
+    @PostMapping(value = "/sethi")
     Result<UserInfo> setHiFromClientOne(@RequestBody UserInfo user);
 
-    @RequestMapping(value = "/getForPage",method = RequestMethod.POST)
+    @PostMapping(value = "/getForPage")
     public Result<Page<UserInfo>> getForPage(@RequestBody Page<UserInfo> page);
 }
