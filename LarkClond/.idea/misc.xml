@@ -19,6 +19,14 @@
         <option value="$PROJECT_DIR$/ConfigCenter/pom.xml" />
         <option value="$PROJECT_DIR$/ConfigCenter/configserver/pom.xml" />
         <option value="$PROJECT_DIR$/ConfigCenter/configclient/pom.xml" />
+        <option value="$PROJECT_DIR$/CloudBus/pom.xml" />
+        <option value="$PROJECT_DIR$/CloudBus/LarkConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/CloudBus/LarkEurekaServer/pom.xml" />
+        <option value="$PROJECT_DIR$/CloudBus/LarkConfigClient/pom.xml" />
+        <option value="$PROJECT_DIR$/CloudBus/BusRabbit/pom.xml" />
+        <option value="$PROJECT_DIR$/eurekapeer/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/entities/pom.xml" />
       </list>
     </option>
   </component>

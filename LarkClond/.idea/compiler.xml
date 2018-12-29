@@ -7,17 +7,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="authority" />
+        <module name="BusRabbit" />
+        <module name="CloudBus" />
         <module name="comm" />
         <module name="Common" />
         <module name="ConfigCenter" />
         <module name="configclient" />
         <module name="configserver" />
         <module name="Demo" />
+        <module name="entities" />
         <module name="eurekaclient2" />
+        <module name="eurekapeer" />
         <module name="eurekaserver" />
         <module name="feign" />
+        <module name="gateway" />
         <module name="LarkClond" />
         <module name="LarkCloud" />
+        <module name="LarkConfigClient" />
+        <module name="LarkConfigServer" />
+        <module name="LarkEurekaServer" />
         <module name="multyds" />
         <module name="multydsweb" />
         <module name="security" />
@@ -27,18 +35,26 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authority" target="1.8" />
+      <module name="BusRabbit" target="1.8" />
+      <module name="CloudBus" target="1.8" />
       <module name="comm" target="1.8" />
       <module name="Common" target="1.8" />
       <module name="ConfigCenter" target="1.8" />
       <module name="configclient" target="1.8" />
       <module name="configserver" target="1.8" />
       <module name="Demo" target="1.8" />
+      <module name="entities" target="1.8" />
       <module name="eurekaclient" target="1.8" />
       <module name="eurekaclient2" target="1.8" />
+      <module name="eurekapeer" target="1.8" />
       <module name="eurekaserver" target="1.8" />
       <module name="feign" target="1.8" />
+      <module name="gateway" target="1.8" />
       <module name="LarkClond" target="1.8" />
       <module name="LarkCloud" target="1.8" />
+      <module name="LarkConfigClient" target="1.8" />
+      <module name="LarkConfigServer" target="1.8" />
+      <module name="LarkEurekaServer" target="1.8" />
       <module name="multyds" target="1.8" />
       <module name="multydsweb" target="1.8" />
       <module name="security" target="1.8" />

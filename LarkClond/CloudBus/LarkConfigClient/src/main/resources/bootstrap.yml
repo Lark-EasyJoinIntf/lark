@@ -1,0 +1,45 @@
+server:
+  port: 7003
+
+spring:
+  application:
+    name: config-client                     #指定了配置文件的应用名
+  cloud:
+    config:
+      #uri: http://localhost:7001/        #Config server的uri
+      profile: dev                       #指定的环境
+      label: master                      #指定分支
+      discovery:
+        enabled: true
+        service-id: config-server
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+      env:
+        enabled: true
+      trace:
+        enabled: true   #开启总线消息更新功能
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        ##bus-refresh
+        include: bus-refresh
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7000/eureka/
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+ #       serviceId: config-server

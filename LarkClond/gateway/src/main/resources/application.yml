@@ -1,0 +1,38 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+##8765 - service-feign、8766 - service-feign2
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: feign_route
+          uri: lb://service-feign:8765
+          predicates:
+          - Path=/a/**
+          #- Weight=provide, 90
+          filters:
+          - StripPrefix=1
+          ##熔断配置，当实际服务异常时调用
+          - name: Hystrix
+            args:
+              name: fallbackcmd
+              fallbackUri: forward:/fallback
+        - id: feign2_route
+          uri: lb://service-feign2:8766
+          predicates:
+          - Path=/b/**
+          #- Weight=provide, 10
+          filters:
+          - StripPrefix=1
+          ##熔断配置，当实际服务异常时调用
+          - name: Hystrix
+            args:
+              name: fallbackcmd
+              fallbackUri: forward:/fallback

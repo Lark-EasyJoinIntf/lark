@@ -2,17 +2,25 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CloudBus/BusRabbit/BusRabbit.iml" filepath="$PROJECT_DIR$/CloudBus/BusRabbit/BusRabbit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CloudBus/CloudBus.iml" filepath="$PROJECT_DIR$/CloudBus/CloudBus.iml" />
       <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
       <module fileurl="file://$PROJECT_DIR$/ConfigCenter/ConfigCenter.iml" filepath="$PROJECT_DIR$/ConfigCenter/ConfigCenter.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo/Demo.iml" filepath="$PROJECT_DIR$/Demo/Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/LarkCloud.iml" filepath="$PROJECT_DIR$/LarkCloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CloudBus/LarkConfigClient/LarkConfigClient.iml" filepath="$PROJECT_DIR$/CloudBus/LarkConfigClient/LarkConfigClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CloudBus/LarkConfigServer/LarkConfigServer.iml" filepath="$PROJECT_DIR$/CloudBus/LarkConfigServer/LarkConfigServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CloudBus/LarkEurekaServer/LarkEurekaServer.iml" filepath="$PROJECT_DIR$/CloudBus/LarkEurekaServer/LarkEurekaServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/Common/authority/authority.iml" filepath="$PROJECT_DIR$/Common/authority/authority.iml" />
       <module fileurl="file://$PROJECT_DIR$/Common/comm/comm.iml" filepath="$PROJECT_DIR$/Common/comm/comm.iml" />
       <module fileurl="file://$PROJECT_DIR$/ConfigCenter/configclient/configclient.iml" filepath="$PROJECT_DIR$/ConfigCenter/configclient/configclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/ConfigCenter/configserver/configserver.iml" filepath="$PROJECT_DIR$/ConfigCenter/configserver/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entities/entities.iml" filepath="$PROJECT_DIR$/entities/entities.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurekaclient2/eurekaclient2.iml" filepath="$PROJECT_DIR$/eurekaclient2/eurekaclient2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekapeer/eurekapeer.iml" filepath="$PROJECT_DIR$/eurekapeer/eurekapeer.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurekaserver/eurekaserver.iml" filepath="$PROJECT_DIR$/eurekaserver/eurekaserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/feign/feign.iml" filepath="$PROJECT_DIR$/feign/feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/Common/multyds/multyds.iml" filepath="$PROJECT_DIR$/Common/multyds/multyds.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo/multydsweb/multydsweb.iml" filepath="$PROJECT_DIR$/Demo/multydsweb/multydsweb.iml" />
       <module fileurl="file://$PROJECT_DIR$/Common/security/security.iml" filepath="$PROJECT_DIR$/Common/security/security.iml" />
