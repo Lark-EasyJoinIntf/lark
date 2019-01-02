@@ -19,6 +19,9 @@ public interface SchedualServiceHi {
     @PostMapping(value = "/sethi")
     Result<UserInfo> setHiFromClientOne(@RequestBody UserInfo user);
 
+    @PostMapping(value = "/login")
+    Result<String> login(@RequestBody UserInfo user);
+
     @PostMapping(value = "/getForPage")
     public Result<Page<UserInfo>> getForPage(@RequestBody Page<UserInfo> page);
 }

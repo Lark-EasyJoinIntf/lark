@@ -22,6 +22,11 @@ public class SchedualServiceHiHystric implements SchedualServiceHi{
     }
 
     @Override
+    public Result<String> login(UserInfo user) {
+        return new Result(Status.FAILED.setMessage("Sorry "+user.getName()+",server is shutdown post!"));
+    }
+
+    @Override
     public Result<Page<UserInfo>> getForPage(Page<UserInfo> page) {
         return new Result(Status.FAILED.setMessage("Sorry ,server is shutdown post!"));
     }

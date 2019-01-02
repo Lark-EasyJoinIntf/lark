@@ -23,6 +23,11 @@ public class HiController {
         return schedualServiceHi.setHiFromClientOne( user.getParam() );
     }
 
+    @PostMapping(value = "/vip/login")
+    public Result<String> login(@RequestBody UserInfo user) {
+        return schedualServiceHi.login( user);
+    }
+
     @PostMapping(value = "/getUserForPage")
     public Result<Page<UserInfo>> getUserForPage(@RequestBody BaseParamEntity<Page> page) {
         Result<Page<UserInfo>> result = new Result(Status.EXC.setMessage("未提供分页参数"));
